@@ -2,24 +2,31 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let os = ["Android", "Blackberry", "Iphone", "Windows Phone"];
+  let mobiles = ["Samsung","HTC","Micromax", "Apple"];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Mobile Operating System</h1>
+      <ul>
+        {os.map((e) => {
+          return <Os oss = {e} />
+        })}
+      </ul>
+      <h1>Mobile manufacturers</h1>
+      <ul>
+        {mobiles.map((e) => {
+          return <Mobiles oss = {e} />
+        })}
+      </ul>
     </div>
   );
 }
-
+function Os(props){
+    // console.log(props)
+    return <li>{props.oss}</li>
+}
+function Mobiles(props){
+  // console.log(props)
+  return <li>{props.oss}</li>
+}
 export default App;
